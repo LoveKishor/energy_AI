@@ -1,0 +1,46 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# ---- Virtual environments ----
+appenv/
+venv/
+env/
+.venv/
+ENV/
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# ---- Trained models ----
+# .pkl files ARE committed (not ignored) in this project — they're small
+# and loading them is much faster than the live-training fallback.
+# IMPORTANT: requirements.txt pins scikit-learn==1.9.0 and joblib==1.5.3
+# to match the exact versions used to create these files. If you retrain
+# with a different scikit-learn version, update both the pinned version
+# AND regenerate the .pkl files together — never let them drift apart.
+*.h5
+*.pt
+*.pth
+
+# ---- Generated / fabricated data ----
+# household_energy_data.csv is INTENTIONALLY tracked (not ignored) —
+# the deployed app trains itself from this file when no .pkl is present.
+# Only other/local-only CSVs (e.g. demo outputs) are ignored below.
+demo_household_series_predictions.csv
+
+# ---- Streamlit ----
+.streamlit/secrets.toml
+
+# ---- OS / editor cruft ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# ---- Logs / misc local outputs ----
+*.log
